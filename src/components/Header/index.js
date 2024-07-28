@@ -10,15 +10,15 @@ const Header = () => (
         />
 
         <button type="button" className="nav-mobile-btn">
-         <img
-          src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-log-out-img.png"
-          alt="nav logout"
-          className="nav-bar-img"
-         />
-        </button>      
+          <img
+            src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-log-out-img.png"
+            alt="nav logout"
+            className="nav-bar-img"
+          />
+        </button>
       </div>
 
-      <div className="nav-content" "nav-bar-large-container">
+      <div className="nav-content nav-bar-large-container">
         <img
           className="website-logo"
           src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-logo-img.png"
@@ -28,7 +28,7 @@ const Header = () => (
           <li className="nav-menu-item">Home</li>
           <li className="nav-menu-item">Product</li>
           <li className="nav-menu-item">Cart</li>
-        </ul>  
+        </ul>
         <button type="button" className="logout-desktop-btn">
           Logout
         </button>
@@ -40,7 +40,7 @@ const Header = () => (
               src="https://assets.ccbp.in/frontend/react-js-nxt-trendz-home-icon.png"
               alt="nav home"
               className="nav-bar-img"
-            />  
+            />
           </li>
 
           <li className="nav-menu-item-mobile">
@@ -48,7 +48,7 @@ const Header = () => (
               src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-Products-icon.png"
               alt="nav Products"
               className="nav-bar-img"
-            />  
+            />
           </li>
 
           <li className="nav-menu-item-mobile">
@@ -56,7 +56,7 @@ const Header = () => (
               src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-cart-icon.png"
               alt="nav cart"
               className="nav-bar-img"
-            />  
+            />
           </li>
         </ul>
       </div>
@@ -65,10 +65,3 @@ const Header = () => (
 )
 
 export default Header
-
-  
-
-
-    
-
-  

@@ -1,17 +1,16 @@
 import {Component} from 'react'
-
-import './index,css'
+import './index.css'
 
 class LoginForm extends Component {
   state = {
     username: '',
     password: '',
-    showSubmitError: false
+    showSubmitError: false,
     errorMsg: '',
-  } 
+  }
 
   onChangeUsername = event => {
-    this.setState({username, event.target.value})
+    this.setState({username: event.target.value})
   }
 
   onChangePassword = event => {
@@ -34,56 +33,54 @@ class LoginForm extends Component {
     const userDetails = {username, password}
     const url = 'https://apis.ccbp.in/login'
     const option = {
-        method: 'POST'
-        body: JSON.stringify(userDetails),
+      method: 'POST',
+      body: JSON.stringify(userDetails),
     }
-
     const response = await fetch(url, options)
-    const date = awaiot response.json()
+    const date = await response.json()
     if (response.ok === true) {
-      this.onSubmitSuccess()  
+      this.onSubmitSuccess()
     } else {
-        this.onSubmitFailure(date.error_msg)
+      this.onSubmitFailure(date.error_msg)
     }
   }
 
   renderPasswordField = () => {
     const {password} = this.state
-
     return (
       <>
-       <label className="input-label" htmlFor="password">
-         PASSWORD
-       </label>  
-       <input
-         type="password"
-         id="password"
-         className="password-input-field"
-         value={password}
-         onChange={this.onChangePassword}
-         placeholder="password"
-       />
+        <label className="input-label" htmlFor="password">
+          PASSWORD
+        </label>
+        <input
+          type="password"
+          id="password"
+          className="password-input-field"
+          value={password}
+          onChange={this.onChangePassword}
+          placeholder="password"
+        />
       </>
-    )     
+    )
   }
 
   renderUsernameField = () => {
     const {username} = this.props
     return (
-     <>
-      <label className="input-label" htmlFor="username">
-        USERNAME
-      </label>  
-      <input
-        type="text"
-        id="username"
-        className="username-input-field"
-        value={username}
-        onChange={this.onChangeUsername}
-        placeholder="Username"
-      />
-     </>
-    )    
+      <>
+        <label className="input-label" htmlFor="username">
+          USERNAME
+        </label>
+        <input
+          type="text"
+          id="username"
+          className="username-input-field"
+          value={username}
+          onChange={this.onChangeUsername}
+          placeholder="Username"
+        />
+      </>
+    )
   }
 
   render() {
@@ -106,16 +103,16 @@ class LoginForm extends Component {
             className="login-website-logo-desktop-img"
             alt="website logo"
           />
-          <div className="input-container">{this.renderUsernameField()}</div>  
+          <div className="input-container">{this.renderUsernameField()}</div>
           <div className="input-container">{this.renderPasswordField()}</div>
           <button type="submit" className="login-button">
             Login
           </button>
-            {showSubmitError && <p className="error-message">*{errorMsg}</p>}
-        </form>    
-      </div>  
-    } 
-   }   
+          {showSubmitError && <p className="error-message">*{errorMsg}</p>}
+        </form>
+      </div>
+    )
+  }
 }
 
 export default LoginForm
