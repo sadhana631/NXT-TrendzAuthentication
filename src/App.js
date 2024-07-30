@@ -4,7 +4,6 @@ import LoginForm from './components/LoginForm'
 import Home from './components/Home'
 import NotFound from './components/NotFound'
 
-import './index.css'
 import './App.css'
 
 const App = () => (

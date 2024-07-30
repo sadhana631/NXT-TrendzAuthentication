@@ -1,4 +1,5 @@
 import {Component} from 'react'
+
 import './index.css'
 
 class LoginForm extends Component {
@@ -32,12 +33,12 @@ class LoginForm extends Component {
     const {username, password} = this.state
     const userDetails = {username, password}
     const url = 'https://apis.ccbp.in/login'
-    const option = {
+    const options = {
       method: 'POST',
       body: JSON.stringify(userDetails),
     }
     const response = await fetch(url, options)
-    const date = await response.json()
+    const data = await response.json()
     if (response.ok === true) {
       this.onSubmitSuccess()
     } else {
@@ -47,6 +48,7 @@ class LoginForm extends Component {
 
   renderPasswordField = () => {
     const {password} = this.state
+
     return (
       <>
         <label className="input-label" htmlFor="password">
@@ -58,7 +60,7 @@ class LoginForm extends Component {
           className="password-input-field"
           value={password}
           onChange={this.onChangePassword}
-          placeholder="password"
+          placeholder="Password"
         />
       </>
     )
@@ -66,6 +68,7 @@ class LoginForm extends Component {
 
   renderUsernameField = () => {
     const {username} = this.props
+
     return (
       <>
         <label className="input-label" htmlFor="username">
@@ -84,7 +87,7 @@ class LoginForm extends Component {
   }
 
   render() {
-    const {isShowSubmitError, errorMsg} = this.state
+    const {showSubmitError, errorMsg} = this.state
     return (
       <div className="login-form-container">
         <img
