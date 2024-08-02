@@ -1,8 +1,6 @@
 import {Component} from 'react'
 
-
 import './index.css'
-
 
 class LoginForm extends Component {
   state = {
@@ -12,29 +10,23 @@ class LoginForm extends Component {
     errorMsg: '',
   }
 
-
   onChangeUsername = event => {
     this.setState({username: event.target.value})
   }
-
 
   onChangePassword = event => {
     this.setState({password: event.target.value})
   }
 
-
   onSubmitSuccess = () => {
     const {history} = this.props
-
 
     history.replace('/')
   }
 
-
   onSubmitFailure = errorMsg => {
     this.setState({showSubmitError: true, errorMsg})
   }
-
 
   submitForm = async event => {
     event.preventDefault()
@@ -50,14 +42,12 @@ class LoginForm extends Component {
     if (response.ok === true) {
       this.onSubmitSuccess()
     } else {
-      this.onSubmitFailure(date.error_msg)
+      this.onSubmitFailure(data.error_msg)
     }
   }
 
-
   renderPasswordField = () => {
     const {password} = this.state
-
 
     return (
       <>
@@ -76,10 +66,8 @@ class LoginForm extends Component {
     )
   }
 
-
   renderUsernameField = () => {
     const {username} = this.state
-
 
     return (
       <>
@@ -97,7 +85,6 @@ class LoginForm extends Component {
       </>
     )
   }
-
 
   render() {
     const {showSubmitError, errorMsg} = this.state
@@ -130,6 +117,5 @@ class LoginForm extends Component {
     )
   }
 }
-
 
 export default LoginForm
